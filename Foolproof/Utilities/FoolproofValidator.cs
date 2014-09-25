@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.ModelBinding;
 
 namespace Foolproof
 {
     public class FoolproofValidator : DataAnnotationsModelValidator<ModelAwareValidationAttribute>
     {
-        public FoolproofValidator(ModelMetadata metadata, ControllerContext context, ModelAwareValidationAttribute attribute)
+      public FoolproofValidator(ModelMetadata metadata, ModelBindingExecutionContext context, ModelAwareValidationAttribute attribute)
             : base(metadata, context, attribute) { }
 
         public override IEnumerable<ModelValidationResult> Validate(object container)
@@ -17,18 +14,18 @@ namespace Foolproof
                 yield return new ModelValidationResult { Message = ErrorMessage };                    
         }
 
-        public override IEnumerable<ModelClientValidationRule> GetClientValidationRules()
-        {
-            var result = new ModelClientValidationRule()
-            {
-                ValidationType = Attribute.ClientTypeName.ToLower(),
-                ErrorMessage = ErrorMessage       
-            };
+        //public override IEnumerable<ModelClientValidationRule> GetClientValidationRules()
+        //{
+        //    var result = new ModelClientValidationRule()
+        //    {
+        //        ValidationType = Attribute.ClientTypeName.ToLower(),
+        //        ErrorMessage = ErrorMessage       
+        //    };
             
-            foreach (var validationParam in Attribute.ClientValidationParameters)
-                result.ValidationParameters.Add(validationParam);
+        //    foreach (var validationParam in Attribute.ClientValidationParameters)
+        //        result.ValidationParameters.Add(validationParam);
             
-            yield return result;
-        }
+        //    yield return result;
+        //}
     }
 }
