@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using FoolproofWebApi.Utilities;
 
-namespace Foolproof
+namespace FoolproofWebApi
 {
     [AttributeUsage(AttributeTargets.Property)]
     public abstract class ModelAwareValidationAttribute : ValidationAttribute
@@ -14,14 +14,19 @@ namespace Foolproof
         static ModelAwareValidationAttribute()
         {
             Register.All();            
-        }    
-
-        public override bool IsValid(object value)
-        {
-            throw new NotImplementedException();
         }
 
-        public override string FormatErrorMessage(string name)
+      protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+      {
+        if (!IsValid(value, validationContext.ObjectInstance))
+        {
+          return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+        }
+
+        return null;
+      }
+
+      public override string FormatErrorMessage(string name)
         {
             if (string.IsNullOrEmpty(ErrorMessageResourceName) && string.IsNullOrEmpty(ErrorMessage))
                 ErrorMessage = DefaultErrorMessage;

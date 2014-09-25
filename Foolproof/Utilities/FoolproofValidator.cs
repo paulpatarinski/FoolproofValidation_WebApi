@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.ModelBinding;
 
-namespace Foolproof
+namespace FoolproofWebApi.Utilities
 {
     public class FoolproofValidator : DataAnnotationsModelValidator<ModelAwareValidationAttribute>
     {

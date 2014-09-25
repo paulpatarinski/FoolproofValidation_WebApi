@@ -5,6 +5,7 @@ using System.Text;
 using System.Reflection;
 using Foolproof;
 using System.Linq.Expressions;
+using FoolproofWebApi;
 
 namespace Foolproof.UnitTests
 {

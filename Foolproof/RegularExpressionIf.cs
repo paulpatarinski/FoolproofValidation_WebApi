@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using FoolproofWebApi.Utilities;
 
-namespace Foolproof
+namespace FoolproofWebApi
 {
     public class RegularExpressionIfAttribute : RequiredIfAttribute
     {

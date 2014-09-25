@@ -1,4 +1,5 @@
 ﻿using Foolproof;
+using FoolproofWebApi;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.ComponentModel.DataAnnotations;
