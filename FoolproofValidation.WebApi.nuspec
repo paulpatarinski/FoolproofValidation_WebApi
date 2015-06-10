@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>foolproof.webapi</id>
+        <version>0.0.2</version>
+        <title>WebAPI Foolproof Validation</title>
+        <authors>Paul Patarinski</authors>
+        <owners>Paul Patarinski</owners>
+        <licenseUrl>http://foolproof.codeplex.com/license</licenseUrl>
+        <projectUrl>http://foolproof.codeplex.com</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>WebAPI Foolproof Validation aims to extend the Data Annotation validation provided in ASP.NET WebAPI. Includes such annotations as [GreaterThan], [RequredIfTrue], [RequiredIfRegExMatch] and more. It also provides simply method for creating custom contingent validators. Fork of http://foolproof.codeplex.com/</description>
+        <language>en-US</language>
+		<releaseNotes>Adding tags</releaseNotes>
+     	<tags>foolproof, WebAPI, Web API, validation</tags>      
+    </metadata>
+    <files>
+        <file src="Foolproof\bin\Release\WebApi Foolproof Validation.dll" target="lib\WebApi Foolproof Validation.dll" />
+    </files>
+</package>
